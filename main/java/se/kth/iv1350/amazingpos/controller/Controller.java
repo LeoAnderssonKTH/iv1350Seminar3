@@ -52,6 +52,8 @@ public class Controller {
     * the InventoryHandler which it then passes on to Sale.
     * @param itemID is the article number or identifier of the item you want to
     * the current sale.
+    * @return gives an ScanItemDTO to the view for the item description, price
+    * and running total that the view then presents to the user.
     */
     public ScanItemDTO scanItem(int itemID){
         ItemDTO itemDTO = inventoryhandler.getItemInfo(itemID);
@@ -64,6 +66,7 @@ public class Controller {
     /*
     * This method as of now only prints out the total price of the sale since
     * further clarification is needed what "ending the sale" implies.
+    * @return gives the final price of the sale
     */
     public int endSale(){
        int finalPrice = sale.getTotalPrice();
