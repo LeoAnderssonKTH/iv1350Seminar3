@@ -64,6 +64,8 @@ public class Sale {
     * If the itemID can be found the quantity of that item will be increased by 1.
     * Note that the total price of the sale is update via a private method in 
     * both cases.
+    * @return saleDTO returns SaleDTO back to the caller so that it can be
+    * forwarded to other layers that require information of the sale.
     */
     public SaleDTO registerItem(int itemID, ItemDTO itemDTO) {
         
@@ -90,8 +92,8 @@ public class Sale {
     }
     
     /*
-    * Informs that the sale has ended and prints the total price of the sale
-    * to the system.
+    * Sends the finalPrice back to the caller.
+    * @return finalPrice returns the final price back to the caller.
     */
     public int getTotalPrice(){
         int finalPrice = this.totalPrice;
@@ -101,6 +103,8 @@ public class Sale {
     /*
     * Controls the paid amount that has been entered and returns a SaleDTO
     * back to the controller.
+    * @return saleDTO returns SaleDTO back to the caller so that it can be
+    * forwarded to other layers that require information of the sale.
     */
     public SaleDTO controlPaidAmount(int amount){
         this.paidAmount = amount;
