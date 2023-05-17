@@ -37,6 +37,7 @@ public class View {
         viewInfo = contr.scanItem(2);System.out.println("Item: " + viewInfo.itemDTO.name + ", Price: " + viewInfo.itemDTO.totalCost);
         System.out.println("Running Total is: " + viewInfo.runningTotal);
         int finalPrice = contr.endSale();
+        System.out.println("The Sale has ended.");
         System.out.println("The total price is: " + finalPrice);
         contr.pay(50);
         
